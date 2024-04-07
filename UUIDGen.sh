@@ -44,7 +44,7 @@ UUIDV5(){
 }
 
 UUID(){
-  echo "$1"
+  ##echo "$1"
   #: generates UUID where version depends on input - coded as a switch
   if [[ $1 == 4 ]]; then result=$(UUIDV4 | head -n 1)
   elif [[ $1 == 5 ]]; then result=$(UUIDV5 | head -n 1)
