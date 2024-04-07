@@ -15,8 +15,6 @@ UUIDV4(){
   #^ output/result of the function
 }
 
-UUIDV4
-
 UUIDV5(){
   #! made in accordance to: https://www.ietf.org/archive/id/draft-ietf-uuidrev-rfc4122bis-01.html#name-uuid-version-5
   NameSpace="AssaignmentForOS"
@@ -45,4 +43,42 @@ UUIDV5(){
   #^ output/result of the function
 }
 
-UUIDV5
+#!/usr/bin/env bash
+
+UUID(){
+  #: generates UUID where version depends on input - coded as a switch
+  if [[ $1 == 4 ]]; then result=$(UUID4 | head -n 1)
+  elif [[ $1 == 5 ]]; then result=$(UUID5 | head -n 1)
+  else 
+    echo "argument must be either '4' or '5'"
+    return 0
+  #^ case of invalid input
+  fi
+  
+  fileName=$("UUID$1.txt")
+  
+  #^ concaternating arguments doesn't require '{}' or it gives error
+  #: has an UUID (same ver) already been generated?
+  if [[ ! -f fileName ]]; 
+  then 
+    echo "No previous UUID V$1 detected" 
+    echo "$result" > "$fileName"
+    #^ makes new file to store the generated UUID
+    #^ double quotes to prevent "globbing and word splitting"
+    #^ because files doesn't exist, it gets made 
+    return 0
+  fi
+  
+  #: is previous UUID (same ver) the same as the current one?
+  if [[ $(cat fileName) == result ]];
+  then
+    echo "previous UUID V$1 matches current one. Please try again!"
+    return 0
+  else
+    echo "previous UUID V$1 does not matches current one. Current UUID overwites previous one in ${fileName}!"
+    result > "fileName"
+    #^ stores (by overwrittting) UUID in the text file
+  fi
+}
+
+UUID
