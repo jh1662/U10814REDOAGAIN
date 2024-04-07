@@ -43,23 +43,22 @@ UUIDV5(){
   #^ output/result of the function
 }
 
-#!/usr/bin/env bash
-
 UUID(){
+  echo "$1"
   #: generates UUID where version depends on input - coded as a switch
-  if [[ $1 == 4 ]]; then result=$(UUID4 | head -n 1)
-  elif [[ $1 == 5 ]]; then result=$(UUID5 | head -n 1)
+  if [[ $1 == 4 ]]; then result=$(UUIDV4 | head -n 1)
+  elif [[ $1 == 5 ]]; then result=$(UUIDV5 | head -n 1)
   else 
     echo "argument must be either '4' or '5'"
     return 0
   #^ case of invalid input
   fi
   
-  fileName=$("UUID$1.txt")
+  fileName="UUID$1.txt"
   
   #^ concaternating arguments doesn't require '{}' or it gives error
   #: has an UUID (same ver) already been generated?
-  if [[ ! -f fileName ]]; 
+  if [[ ! -f "$fileName" ]]; 
   then 
     echo "No previous UUID V$1 detected" 
     echo "$result" > "$fileName"
@@ -76,9 +75,9 @@ UUID(){
     return 0
   else
     echo "previous UUID V$1 does not matches current one. Current UUID overwites previous one in ${fileName}!"
-    result > "fileName"
+    echo "$result" > "$fileName"
     #^ stores (by overwrittting) UUID in the text file
   fi
 }
 
-UUID
+UUID "$1"
