@@ -1,4 +1,24 @@
 #!/usr/bin/env bash
+analyseDir(){
+    #: filepath validation
+    if [ ! -e "$1" ]; then
+        #^ does file path exists or is valid?
+        echo "file path is invalid or does not exist"
+        return; fi
+    if [ -d "$1" ]; then
+        #^ does file lead to a dir?
+        echo "file path leads to a file instead of a dir"
+        return; fi
+
+    #: analysing all dirs using recursion
+    for entity in "$1"/*; do
+        if [ -d "$entity" ]; then
+            echo "sub-directory detected - entering $entity"
+            analyseDir "$entity"
+        fi
+    done
+    analyseFiles "$1"
+}
 
 #! line indents are different because some code was made on https://www.shellcheck.net/ while the rest on VS Code
 analyseFiles(){
@@ -90,13 +110,13 @@ analyseFiles(){
     for i in "${!fileTypes[@]}"; do
         readableSize=$(numfmt --to=iec "${fileSizeTot[i]}")
         #^ makes storage size more human readable
-        echo "${fileTypes[i]} | $readableSize | ${fileCount[i]}"
+        echo "${fileTypes[i]} | ${readableSize}B | ${fileCount[i]}"
     done
     printf "\n"
     echo "overall statistics:"
     echo "shortest file name: $shortestName, more than one shorest file name = $shortestDraw"
     echo "longest file name: $longestName, more than one longest file name = $longestDraw"
-    echo "total size of subjected dir: $(numfmt --to=iec "$totalDirSize")"
+    echo "total size of subjected dir: $(numfmt --to=iec "$totalDirSize")B"
 }
 
 analyseFiles "$1"

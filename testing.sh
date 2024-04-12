@@ -13,3 +13,5 @@ echo "ls -l | awk '{print $1}'"
 
 b=false
 if ! $b; then echo "correct!"; else echo "incorrect"; fi
+
+echo $(numfmt --to=iec "1024")
