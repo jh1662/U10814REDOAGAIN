@@ -5,7 +5,7 @@ analyseDir(){
         #^ does file path exists or is valid?
         echo "file path is invalid or does not exist"
         return; fi
-    if [ -d "$1" ]; then
+    if [ ! -d "$1" ]; then
         #^ does file lead to a dir?
         echo "file path leads to a file instead of a dir"
         return; fi
@@ -15,9 +15,11 @@ analyseDir(){
         if [ -d "$entity" ]; then
             echo "sub-directory detected - entering $entity"
             analyseDir "$entity"
+            #^ recurse with a sub dir
         fi
     done
     analyseFiles "$1"
+    #^ end of recursion
 }
 
 #! line indents are different because some code was made on https://www.shellcheck.net/ while the rest on VS Code
@@ -46,8 +48,10 @@ analyseFiles(){
         name=$(basename "$file")
         type="${name##*.}"
         size=$(stat -c %s "$file")
-        echo "$name $size"
-        echo "before is ${#fileTypes[@]}"
+        ##echo "$name $size"
+
+        if [ ! -d "$1" ]; then break; fi
+        #^ verifies thats its a file
 
         #: tries to find record of subjected file type
         for i in "${!fileTypes[@]}"; do
@@ -68,8 +72,6 @@ analyseFiles(){
             fileCount+=(1)
             fileSizeTot+=("$size")
         fi
-
-        echo "after is ${#fileTypes[@]}"
 
         #: compare file name length
         if ((${#name}>${#longestName})); then
@@ -108,15 +110,18 @@ analyseFiles(){
     echo "analysis of directory from $1:"
     echo "File type | cumulative size | file count:"
     for i in "${!fileTypes[@]}"; do
+        #: shows info of each file type
         readableSize=$(numfmt --to=iec "${fileSizeTot[i]}")
         #^ makes storage size more human readable
         echo "${fileTypes[i]} | ${readableSize}B | ${fileCount[i]}"
     done
+    #: shows extremities in the subjected dir
     printf "\n"
     echo "overall statistics:"
     echo "shortest file name: $shortestName, more than one shorest file name = $shortestDraw"
     echo "longest file name: $longestName, more than one longest file name = $longestDraw"
     echo "total size of subjected dir: $(numfmt --to=iec "$totalDirSize")B"
+    echo "----------------------------------------------------------------"
 }
 
-analyseFiles "$1"
+analyseDir $1
