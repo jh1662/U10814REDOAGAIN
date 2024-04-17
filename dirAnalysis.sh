@@ -13,13 +13,15 @@ analyseDir(){
     #: analysing all dirs using recursion
     for entity in "$1"/*; do
         if [ -d "$entity" ]; then
-            echo "sub-directory detected - entering $entity"
-            analyseDir "$entity"
+            echo ">>> sub-directory detected - entering $entity <<<"
+            analyseDir "$entity" &
             #^ recurse with a sub dir
         fi
     done
-    analyseFiles "$1"
+    analyseFiles "$1" &
     #^ end of recursion
+    wait
+    #^ prevents program to end while function executions are still running
 }
 
 #! line indents are different because some code was made on https://www.shellcheck.net/ while the rest on VS Code
@@ -50,7 +52,7 @@ analyseFiles(){
         size=$(stat -c %s "$file")
         ##echo "$name $size"
 
-        if [ ! -d "$1" ]; then break; fi
+        if [ -d "$file" ]; then continue; fi
         #^ verifies thats its a file
 
         #: tries to find record of subjected file type
@@ -106,22 +108,29 @@ analyseFiles(){
     for size in "${fileSizeTot[@]}"; do ((totalDirSize+=$size)); done
     #^ calculate total size of subjected dir
 
-    #: output results - each file type and corrosponding total size and corrosponding count
-    echo "analysis of directory from $1:"
-    echo "File type | cumulative size | file count:"
-    for i in "${!fileTypes[@]}"; do
-        #: shows info of each file type
-        readableSize=$(numfmt --to=iec "${fileSizeTot[i]}")
-        #^ makes storage size more human readable
-        echo "${fileTypes[i]} | ${readableSize}B | ${fileCount[i]}"
-    done
-    #: shows extremities in the subjected dir
-    printf "\n"
-    echo "overall statistics:"
-    echo "shortest file name: $shortestName, more than one shorest file name = $shortestDraw"
-    echo "longest file name: $longestName, more than one longest file name = $longestDraw"
-    echo "total size of subjected dir: $(numfmt --to=iec "$totalDirSize")B"
-    echo "----------------------------------------------------------------"
+    #: output results - shows each file type and corrosponding total size and corrosponding count
+    #^ prevent echos to mix with echos from other parallel processes
+    result="analysis of directory from $1:\n"
+    if (( ${#fileTypes[@]} > 0 )); then
+        result+="\033[1mFile type | cumulative size | file count:\033[0m\n"
+        for i in "${!fileTypes[@]}"; do
+            #: shows info of each file type
+            readableSize=$(numfmt --to=iec "${fileSizeTot[i]}")
+            #^ makes storage size more human readable
+            result+="${fileTypes[i]} | ${readableSize}B | ${fileCount[i]}\n"
+        done
+    else result+="no files detected in this directory\n"
+    fi
+    #: output results - shows extremities in the subjected dir
+    result+="\n"
+    result+="overall statistics:\n"
+    result+="shortest file name: $shortestName, more than one shorest file name = $shortestDraw\n"
+    result+="longest file name: $longestName, more than one longest file name = $longestDraw\n"
+    result+="total size of subjected dir: $(numfmt --to=iec "$totalDirSize")B\n"
+    result+="----------------------------------------------------------------\n"
+    printf "%b" "$result"
+    #^ apparently it is not good practive to use 'printf "$result"' instead
+    #^ https://www.shellcheck.net/wiki/SC2059
 }
 
-analyseDir $1
+analyseDir "$1"
