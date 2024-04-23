@@ -1,5 +1,9 @@
 #!/bin/bash
 
+funct(){
+   echo "new PID of ' $$ ' with PPID ' ${PPID} '"
+}
+
 a="1234567890abcdef"
 echo "${a:1:3}"
 echo "${a:4:3}"
@@ -40,3 +44,6 @@ echo $ShaOneLowExtraHex
 UUIDHex="${CSPRNG:0:12}${Version}${CSPRNG:12:3}0x$((0x80|("0x${CSPRNG:15:2}"&0x3F)))${CSPRNG:17:14}"
 
 echo $(numfmt --to=iec "1024")
+
+echo "new PID of ' $$ ' with PPID ' ${PPID} '"
+funct

@@ -8,9 +8,10 @@ initialise(){
     "uuid") UUID $2 ;;
     "analyse") analyseDir $2 ;;
     *) printf "%b" "Invalid or no argument provided!
-Use argument 'help' to view all possible arguments.
+Use argument ' help ' to view all possible arguments.
     " ;;
     esac
+    log "$1" "$2"
 }
 
 help(){
@@ -20,6 +21,24 @@ help | N/A | shows arguments for commands with purpose and any extra argument
 uuid | '4' or '5' for either version (4 or 5 respectrfully) | generates a UUID
 analyse | directory path (using '/', not '\') | generates a comprehensive report of subjected directory
   "
+}
+
+#endregion
+#region logging system
+
+log(){
+    if [ ! -e "user_activity.log" ]; then echo "Making new log file (no existing one detected)."; fi
+    #^ notifying user that if there is already a file to output to
+    #: determine action based on argument(s)
+    if [[ $2 == "" ]]; then arg="without arguments"; else arg="with argument ' $2 '"; fi
+    case $1 in
+    "1") action="started executing this script - log on" ;;
+    "0") action="finished executing this script - log off" ;;
+    *) action="called the command ' $1 ' $arg" ;;
+    esac
+
+    echo "$(date +"%Y-%m-%d %H:%M:%S"): user ' $(whoami) ' has $action | user's primary group: $(id -g)" >> "user_activity.log"
+    #^ the log to be outputted
 }
 
 #endregion
@@ -106,7 +125,12 @@ UUID(){
   fi
 }
 
+#endregion
+#region analysing dir
+
 analyseDir(){
+    echo "new (except not new on first call) PID of ' $BASHPID ' with PPID ' $PPID ' - process of analysing files of dir with path: $1"
+    #^ new PID for every call from the second call
     #: filepath validation
     if [ ! -e "$1" ]; then
         #^ does file path exists or is valid?
@@ -131,12 +155,11 @@ analyseDir(){
     #^ prevents program to end while function executions are still running
 }
 
-#endregion
-#region analysing dir
-
 #! code style may be different because some code was made on https://www.shellcheck.net/ while the rest on VS Code
 analyseFiles(){
     #! $1 is file path of subjected dir
+    echo "new PID of ' $$ ' with PPID ' ${PPID} ' - process of analysing files of dir with path: $1"
+    #^ new PID due to being called in parallel
     #: all 3 arrays' indexes corrospond with each other
     fileTypes=()
     #^ show all file extentions in dir
@@ -246,6 +269,10 @@ analyseFiles(){
 #endregion
 #region bodycode
 
+
+echo "new PID of ' $BASHPID ' with PPID ' ${PPID} ' - beginning of the script"
+log "1"
 initialise "$1" "$2"
+log "0"
 
 #endregion
