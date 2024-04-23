@@ -61,3 +61,10 @@
 2024-04-23 16:21:27: user ' Emperor Haddad ' has started executing this script - log on | user's primary group: 197121
 2024-04-23 16:21:39: user ' Emperor Haddad ' has called the command ' analyse ' with argument ' Assignment_Template/_Directory ' | user's primary group: 197121
 2024-04-23 16:21:39: user ' Emperor Haddad ' has finished executing this script - log off | user's primary group: 197121
+2024-04-23 18:35:21: user ' Emperor Haddad ' has started executing this script - log on | user's primary group: 197121
+2024-04-23 18:35:21: user ' Emperor Haddad ' has called the command ' Assignment_Template//_Directory/ ' without arguments | user's primary group: 197121
+2024-04-23 18:35:21: user ' Emperor Haddad ' has finished executing this script - log off | user's primary group: 197121
+2024-04-23 18:35:31: user ' Emperor Haddad ' has started executing this script - log on | user's primary group: 197121
+2024-04-23 18:35:43: user ' Emperor Haddad ' has started executing this script - log on | user's primary group: 197121
+2024-04-23 18:35:55: user ' Emperor Haddad ' has called the command ' analyse ' with argument ' Assignment_Template//////////_Directory/ ' | user's primary group: 197121
+2024-04-23 18:35:55: user ' Emperor Haddad ' has finished executing this script - log off | user's primary group: 197121
