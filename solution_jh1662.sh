@@ -5,8 +5,8 @@
 initialise(){
   case $1 in
     "help") help ;;
-    "uuid") UUID $2 ;;
-    "analyse") analyseDir $2 ;;
+    "uuid") UUID "$2" ;;
+    "analyse") analyse "$2" ;;
     *) printf "%b" "Invalid or no argument provided!
 Use argument ' help ' to view all possible arguments.
     " ;;
@@ -114,7 +114,7 @@ UUID(){
   fi
 
   #: is previous UUID (same ver) the same as the current one?
-  if [[ $(cat $fileName) == result ]];
+  if [[ $(cat "$fileName") == result ]];
   then
     echo "previous UUID V$1 matches current one. Please try again!"
     return 0
@@ -127,6 +127,23 @@ UUID(){
 
 #endregion
 #region analysing dir
+
+analyse(){
+  #? is multiplexing impossible with only Coreutils? I was told that each parallel process is its own shell.
+  #: setup
+  $all
+  mkdir "cache"
+  analyseDir "$1"
+
+  for file in "cache"/*; do all+=$(cat "$file"); done
+  #^ combine outputs from all parallel processes
+  echo -e "$all" > "directory_analysis.txt"
+  #^ save to file ("-e" arg conciders new lines)
+  printf "%b" "$all"
+  #^ print to terminal
+  rm -r "cache"
+  #^ delete all the cache
+}
 
 analyseDir(){
     echo "new (except not new on first call) PID of ' $BASHPID ' with PPID ' $PPID ' - process of analysing files of dir with path: $1"
@@ -238,7 +255,7 @@ analyseFiles(){
 
     done
 
-    for size in "${fileSizeTot[@]}"; do ((totalDirSize+=$size)); done
+    for size in "${fileSizeTot[@]}"; do ((totalDirSize+="$size")); done
     #^ calculate total size of subjected dir
 
     #: output results - shows each file type and corrosponding total size and corrosponding count
@@ -261,9 +278,11 @@ analyseFiles(){
     result+="longest file name: $longestName, more than one longest file name = $longestDraw\n"
     result+="total size of subjected dir: $(numfmt --to=iec "$totalDirSize")B\n"
     result+="----------------------------------------------------------------\n"
-    printf "%b" "$result"
-    #^ apparently it is not good practive to use 'printf "$result"' instead
-    #^ https://www.shellcheck.net/wiki/SC2059
+    ##printf "%b" "$result"
+    ##^ apparently it is not good practive to use 'printf "$result"' instead
+    ##^ https://www.shellcheck.net/wiki/SC2059
+    echo "$result" > "cache/${1//\//,}"
+    #^ if i just print instead of writting to file, the print statement outputs will sometimes merge with each other (even with the 'wait' statement)
 }
 
 #endregion

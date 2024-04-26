@@ -1,0 +1,191 @@
+analysis of directory from Assignment_Template/_Directory:
+no files detected in this directory
+
+overall statistics:
+shortest file name: , more than one shorest file name = false
+longest file name: , more than one longest file name = false
+total size of subjected dir: 0B
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_1:
+[1mFile type | cumulative size | file count:[0m
+dat | 19KB | 54
+sh | 777B | 37
+png | 1.8MB | 25
+txt | 0B | 30
+jpg | 765KB | 26
+
+overall statistics:
+shortest file name: zOpFppL1VsS.sh, more than one shorest file name = true
+longest file name: wM7yopo8bnGzDyR23.png, more than one longest file name = true
+total size of subjected dir: 2.5MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_1/subsubdirectory_1:
+[1mFile type | cumulative size | file count:[0m
+dat | 20KB | 56
+jpg | 1.1MB | 37
+sh | 651B | 31
+txt | 0B | 25
+png | 2.0MB | 28
+
+overall statistics:
+shortest file name: ZzIG.sh, more than one shorest file name = false
+longest file name: XOUkVjxRsYymQPJnJ.dat, more than one longest file name = true
+total size of subjected dir: 3.1MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_1/subsubdirectory_2:
+[1mFile type | cumulative size | file count:[0m
+jpg | 765KB | 26
+dat | 22KB | 62
+sh | 630B | 30
+txt | 0B | 32
+png | 1.8MB | 25
+
+overall statistics:
+shortest file name: Zo62oaGAQRjp8E.dat, more than one shorest file name = true
+longest file name: m2cNsTXkQcwMphHon.dat, more than one longest file name = true
+total size of subjected dir: 2.5MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_1/subsubdirectory_3:
+[1mFile type | cumulative size | file count:[0m
+txt | 0B | 40
+sh | 756B | 36
+jpg | 942KB | 32
+dat | 22KB | 63
+png | 2.3MB | 33
+
+overall statistics:
+shortest file name: ZXNZ.txt, more than one shorest file name = false
+longest file name: YI0gAOe6Vx8BtS9LB.dat, more than one longest file name = true
+total size of subjected dir: 3.3MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_2:
+[1mFile type | cumulative size | file count:[0m
+txt | 0B | 19
+jpg | 677KB | 23
+png | 2.7MB | 38
+dat | 23KB | 65
+sh | 567B | 27
+
+overall statistics:
+shortest file name: ZylLI2lJ.dat, more than one shorest file name = true
+longest file name: Y9AfB4z7lSFYdEx84.png, more than one longest file name = true
+total size of subjected dir: 3.4MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_2/subsubdirectory_1:
+[1mFile type | cumulative size | file count:[0m
+dat | 124KB | 72
+jpg | 1.1MB | 35
+png | 2.9MB | 42
+txt | 351B | 34
+sh | 525B | 25
+
+overall statistics:
+shortest file name: zvsCq1x5sRbDX3GGj.dat, more than one shorest file name = true
+longest file name: zvsCq1x5sRbDX3GGj.dat, more than one longest file name = true
+total size of subjected dir: 4.1MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_2/subsubdirectory_2:
+[1mFile type | cumulative size | file count:[0m
+sh | 630B | 30
+dat | 21KB | 60
+png | 1.2MB | 18
+jpg | 912KB | 32
+txt | 0B | 33
+
+overall statistics:
+shortest file name: zmzefSehahixhR.dat, more than one shorest file name = true
+longest file name: xIChCwsWhn8VfGw1V.txt, more than one longest file name = true
+total size of subjected dir: 2.1MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_2/subsubdirectory_3:
+[1mFile type | cumulative size | file count:[0m
+dat | 26KB | 75
+jpg | 883KB | 30
+png | 2.0MB | 28
+sh | 71KB | 18
+txt | 0B | 24
+
+overall statistics:
+shortest file name: ZPvAN.dat, more than one shorest file name = false
+longest file name: Y2ZUI1k9ctjoNcYan.dat, more than one longest file name = true
+total size of subjected dir: 2.9MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_3:
+[1mFile type | cumulative size | file count:[0m
+txt | 0B | 22
+jpg | 824KB | 28
+sh | 336B | 16
+png | 918KB | 13
+dat | 14KB | 39
+
+overall statistics:
+shortest file name: ZZK9cpN.jpg, more than one shorest file name = false
+longest file name: zTIPi3eKSIqYhUX4K.png, more than one longest file name = true
+total size of subjected dir: 1.8MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_1:
+[1mFile type | cumulative size | file count:[0m
+sh | 378B | 18
+dat | 14KB | 39
+png | 1.8MB | 25
+txt | 351B | 19
+jpg | 530KB | 18
+
+overall statistics:
+shortest file name: zTiKMHVrKesr39.dat, more than one shorest file name = true
+longest file name: yvmH0AZBMgFiKJB4i.png, more than one longest file name = true
+total size of subjected dir: 2.3MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_2:
+[1mFile type | cumulative size | file count:[0m
+png | 1.2MB | 16
+dat | 13KB | 37
+jpg | 530KB | 18
+txt | 0B | 22
+sh | 441B | 21
+
+overall statistics:
+shortest file name: zq2D7.dat, more than one shorest file name = false
+longest file name: R1t5O9tvN7cUvtiIu.txt, more than one longest file name = true
+total size of subjected dir: 1.7MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_3:
+[1mFile type | cumulative size | file count:[0m
+sh | 420B | 20
+txt | 0B | 19
+dat | 12KB | 35
+jpg | 559KB | 19
+png | 1.7MB | 24
+
+overall statistics:
+shortest file name: zz3GNt5.dat, more than one shorest file name = false
+longest file name: RMCKS4pUDvRJYLZUV.png, more than one longest file name = true
+total size of subjected dir: 2.2MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_4:
+[1mFile type | cumulative size | file count:[0m
+sh | 504B | 24
+jpg | 530KB | 18
+dat | 15KB | 41
+txt | 0B | 17
+png | 1.6MB | 22
+
+overall statistics:
+shortest file name: zYF6u5wQgos.dat, more than one shorest file name = false
+longest file name: Yu4LdIp0xQMuKDm3Q.png, more than one longest file name = true
+total size of subjected dir: 2.1MB
+----------------------------------------------------------------
+analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_5:
+[1mFile type | cumulative size | file count:[0m
+jpg | 706KB | 24
+dat | 18KB | 53
+png | 1.4MB | 19
+sh | 378B | 18
+txt | 30KB | 24
+
+overall statistics:
+shortest file name: ZuTjM90V2O.txt, more than one shorest file name = false
+longest file name: yE68rtTZ7YXYctKcT.png, more than one longest file name = true
+total size of subjected dir: 2.1MB
+----------------------------------------------------------------
+

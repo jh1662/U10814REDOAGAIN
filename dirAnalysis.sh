@@ -105,7 +105,7 @@ analyseFiles(){
 
     done
 
-    for size in "${fileSizeTot[@]}"; do ((totalDirSize+=$size)); done
+    for size in "${fileSizeTot[@]}"; do ((totalDirSize+="$size")); done
     #^ calculate total size of subjected dir
 
     #: output results - shows each file type and corrosponding total size and corrosponding count

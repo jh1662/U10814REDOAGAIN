@@ -34,5 +34,8 @@ Files:
 * `UUID4.txt` - stores a version 4 UUID and gets overwritten.
 * `UUID5.txt` - stores a version 5 UUID and gets overwritten.
 * `user_activity.log` - stores logs and appends to existing ones.
+* `directory_analysis.txt` - stores analysis infomation of subjected directory and child directories inside it.
+## Temporary Storage
+As an indirect, but simple, form of multiplexing, a directory (called `cache`) may be created and deleted with cache text files inside it.
 ## Author
 made my CCCU student James Haddad in 2024 (student username: jh1662).

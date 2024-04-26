@@ -47,3 +47,6 @@ echo $(numfmt --to=iec "1024")
 
 echo "new PID of ' $$ ' with PPID ' ${PPID} '"
 funct
+
+path="Assignment_Template/setup/buildAssignment.smth"
+echo "${path//\//,}"
