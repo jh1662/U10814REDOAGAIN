@@ -262,7 +262,8 @@ analyseFiles(){
     #^ prevent echos to mix with echos from other parallel processes
     result="analysis of directory from $1:\n"
     if (( ${#fileTypes[@]} > 0 )); then
-        result+="\033[1mFile type | cumulative size | file count:\033[0m\n"
+        ##result+="\033[1mFile type | cumulative size | file count:\033[0m\n"
+        result+="File type | cumulative size | file count:\n"
         for i in "${!fileTypes[@]}"; do
             #: shows info of each file type
             readableSize=$(numfmt --to=iec "${fileSizeTot[i]}")

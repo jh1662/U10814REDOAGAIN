@@ -7,7 +7,7 @@ longest file name: , more than one longest file name = false
 total size of subjected dir: 0B
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_1:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 dat | 19KB | 54
 sh | 777B | 37
 png | 1.8MB | 25
@@ -20,7 +20,7 @@ longest file name: wM7yopo8bnGzDyR23.png, more than one longest file name = true
 total size of subjected dir: 2.5MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_1/subsubdirectory_1:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 dat | 20KB | 56
 jpg | 1.1MB | 37
 sh | 651B | 31
@@ -33,7 +33,7 @@ longest file name: XOUkVjxRsYymQPJnJ.dat, more than one longest file name = true
 total size of subjected dir: 3.1MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_1/subsubdirectory_2:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 jpg | 765KB | 26
 dat | 22KB | 62
 sh | 630B | 30
@@ -46,7 +46,7 @@ longest file name: m2cNsTXkQcwMphHon.dat, more than one longest file name = true
 total size of subjected dir: 2.5MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_1/subsubdirectory_3:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 txt | 0B | 40
 sh | 756B | 36
 jpg | 942KB | 32
@@ -59,7 +59,7 @@ longest file name: YI0gAOe6Vx8BtS9LB.dat, more than one longest file name = true
 total size of subjected dir: 3.3MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_2:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 txt | 0B | 19
 jpg | 677KB | 23
 png | 2.7MB | 38
@@ -72,7 +72,7 @@ longest file name: Y9AfB4z7lSFYdEx84.png, more than one longest file name = true
 total size of subjected dir: 3.4MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_2/subsubdirectory_1:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 dat | 124KB | 72
 jpg | 1.1MB | 35
 png | 2.9MB | 42
@@ -85,7 +85,7 @@ longest file name: zvsCq1x5sRbDX3GGj.dat, more than one longest file name = true
 total size of subjected dir: 4.1MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_2/subsubdirectory_2:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 sh | 630B | 30
 dat | 21KB | 60
 png | 1.2MB | 18
@@ -98,7 +98,7 @@ longest file name: xIChCwsWhn8VfGw1V.txt, more than one longest file name = true
 total size of subjected dir: 2.1MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_2/subsubdirectory_3:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 dat | 26KB | 75
 jpg | 883KB | 30
 png | 2.0MB | 28
@@ -111,7 +111,7 @@ longest file name: Y2ZUI1k9ctjoNcYan.dat, more than one longest file name = true
 total size of subjected dir: 2.9MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_3:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 txt | 0B | 22
 jpg | 824KB | 28
 sh | 336B | 16
@@ -124,7 +124,7 @@ longest file name: zTIPi3eKSIqYhUX4K.png, more than one longest file name = true
 total size of subjected dir: 1.8MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_1:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 sh | 378B | 18
 dat | 14KB | 39
 png | 1.8MB | 25
@@ -137,7 +137,7 @@ longest file name: yvmH0AZBMgFiKJB4i.png, more than one longest file name = true
 total size of subjected dir: 2.3MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_2:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 png | 1.2MB | 16
 dat | 13KB | 37
 jpg | 530KB | 18
@@ -150,7 +150,7 @@ longest file name: R1t5O9tvN7cUvtiIu.txt, more than one longest file name = true
 total size of subjected dir: 1.7MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_3:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 sh | 420B | 20
 txt | 0B | 19
 dat | 12KB | 35
@@ -163,7 +163,7 @@ longest file name: RMCKS4pUDvRJYLZUV.png, more than one longest file name = true
 total size of subjected dir: 2.2MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_4:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 sh | 504B | 24
 jpg | 530KB | 18
 dat | 15KB | 41
@@ -176,7 +176,7 @@ longest file name: Yu4LdIp0xQMuKDm3Q.png, more than one longest file name = true
 total size of subjected dir: 2.1MB
 ----------------------------------------------------------------
 analysis of directory from Assignment_Template/_Directory/subdirectory_3/subsubdirectory_5:
-[1mFile type | cumulative size | file count:[0m
+File type | cumulative size | file count:
 jpg | 706KB | 24
 dat | 18KB | 53
 png | 1.4MB | 19
