@@ -19,7 +19,7 @@ help(){
 \033[1mCommands/arguments | extra argument | purpose :\033[0m\n
 help | N/A | shows arguments for commands with purpose and any extra argument
 uuid | '4' or '5' for either version (4 or 5 respectrfully) | generates a UUID
-analyse | directory path (using '/', not '\') | generates a comprehensive report of subjected directory
+analyse | relative directory path (using '/', not '\') | generates a comprehensive report of subjected directory
   "
 }
 

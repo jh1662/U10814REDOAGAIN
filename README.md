@@ -27,7 +27,7 @@ $ bash solution_jh1662.sh arg1 [arg2]
 * anything else (or nothing) - user will be suggested to use `help` for arg1.
 ### Options for `arg2`
 * `4` or `5` when `arg1` is `uuid`.
-* path/address for the subjected directory when `arg1` is `analyse`. The address must use `/` instead of `\` (if used at all). Multiple slashes in a row are tolerated in the address (like `///`).
+* relative path/address for the subjected directory when `arg1` is `analyse`. The address must use `/` instead of `\` (if used at all). Multiple slashes in a row are tolerated in the address (like `///`).
 ## Files
 As previously mentioned, some results/outputs will be stored in named files. If the wanted file does not, it will then be created.
 Files:
