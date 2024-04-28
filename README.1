@@ -1,2 +1,61 @@
-.TH solution_jh1662 1
-.SH EXAMPLES
+.TH solution_jh1662 1 "2024" "CCCU student James Haddad" "User Manuals"
+.SH NAME
+solution_jh1662 \- A solution to a variety of tasks from coursework (U10814)
+.SH DESCRIPTION
+A solution to a variety of tasks from coursework (U10814)
+.SH FUNCTIONALITY
+Solved the following:
+.IP \[bu] 2
+Generates valid UUID 4 and stores it as a file
+.IP \[bu] 2
+Generates valid UUID 5 and stores it as a file
+.IP \[bu] 2
+Analyse sizes and names in a directory and store them as a file
+.IP \[bu] 2
+shows PIDs and PPID
+.IP \[bu] 2
+shows logs of users using the script
+.SH USAGE
+The script can be run by using the following command in either Git Bash or Linux terminal:
+.SS Synopsis
+.nf
+\fB$ bash solution_jh1662.sh arg1 [arg2]\fR
+.fi
+.SS Description
+.IP \[bu] 2
+\bash\b denotes that it is a bash file.
+.IP \[bu] 2
+\solution_jh1662.sh\b is the name of the file.
+.IP \[bu] 2
+\barg1\b is a required argument placeholder where options will be explored later
+.IP \[bu] 2
+\barg2\b is an optional argument placeholder where options will be explored later
+.SS Options for \fIarg1\fR (some require \fIarg2\fR)
+.IP \[bu] 2
+\bhelp\b - shows all possible options for both arguments.
+.IP \[bu] 2
+\buuid\b - generates either uuid version 4 or 5.
+.IP \[bu] 2
+\banalyse\b - generates a comprehensive report of subjected directory.
+.IP \[bu] 2
+anything else (or nothing) - user will be suggested to use \bhelp\b for arg1.
+.SS Options for \fIarg2\fR
+.IP \[bu] 2
+\b4\b or \b5\b when \barg1\b is \buuid\b.
+.IP \[bu] 2
+relative path/address for the subjected directory when \barg1\b is \banalyse\b. The address must use \b/\b instead of \b\\\b (if used at all). Multiple slashes in a row are tolerated in the address (like \b///\b).
+.SH FILES
+As previously mentioned, some results/outputs will be stored in named files. If the wanted file does not, it will then be created.
+Files:
+.IP \[bu] 2
+\bUUID4.txt\b - stores a version 4 UUID and gets overwritten.
+.IP \[bu] 2
+\bUUID5.txt\b - stores a version 5 UUID and gets overwritten.
+.IP \[bu] 2
+\buser_activity.log\b - stores logs and appends to existing ones.
+.IP \[bu] 2
+\bdirectory_analysis.txt\b - stores analysis infomation of subjected directory and child directories inside it.
+.SH TEMPORARY STORAGE
+As an indirect, but simple, form of multiplexing, a directory (called \bcache\b) may be created and deleted with cache text files inside it.
+.SH AUTHOR
+made my CCCU student James Haddad in 2024 (student username: jh1662).
